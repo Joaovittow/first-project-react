@@ -27,6 +27,7 @@ export const ContainerItens = styled.div`
   padding: 50px 36px;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 `;
 
 export const H1 = styled.h1`
@@ -55,12 +56,13 @@ export const Input = styled.input`
   padding: 15px 20px 15px 25px;
   color: #fff;
   font-size: 24px;
+  line-height: 28px;
   font-weight: 400;
-  margin-bottom: 56px;
+  margin-bottom: 30px;
 `;
 
 export const Button = styled.button`
-  margin-top: 80px;
+  margin-top: 50px;
   border-radius: 14px;
   background: var(--Templates-5-Color-1, rgba(0, 0, 0, 0.8));
   width: 342px;
@@ -77,4 +79,40 @@ export const Button = styled.button`
   gap: 20px;
   cursor: pointer;
   border: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+`;
+
+export const User = styled.li`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  outline: none;
+  padding: 15px 20px 15px 25px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
 `;
