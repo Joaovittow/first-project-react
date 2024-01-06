@@ -1,40 +1,40 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-import People from "./assets/people.svg";
-import Arrow from "./assets/arrow.svg";
-import Trash from "./assets/trash.svg";
+import People from "../../assets/people.svg";
+import Arrow from "../../assets/arrow.svg";
+
+import H1 from "../../components/Title"
+import ContainerItens from "../../components/ContainerItens"
 
 import {
   Container,
   Image,
-  ContainerItens,
-  H1,
   InputLabel,
   Input,
   Button,
-  User,
 } from "./styles";
 
 const App = () => {
   const [users, setUsers] = useState([]);
   const inputName = useRef();
   const inputAge = useRef();
+  const navigate = useNavigate();
 
   const addNewUser = async() => {
 
     const { data: newUser } = await axios.post("http://localhost:3001/users", { 
       name: inputName.current.value, 
       age: inputAge.current.value,
-    })
-
+    });
+    
     setUsers([...users, newUser]);
-  };
 
-  const deleteUser = (userId) => {
-    const newUsers = users.filter(user => user.id !== userId)
-    setUsers(newUsers)
-  }
+    navigate("/users")
+
+  };
+  
 
   return (
     <Container>
@@ -53,16 +53,6 @@ const App = () => {
           Register <img alt="arrow" src={Arrow} />
         </Button>
 
-        <ul>
-          {users.map((user) => (
-            <User key={user.id}>
-              <p>{user.name}</p> <p>{user.age}</p>
-              <button onClick={() => deleteUser(user.id)}>
-                <img alt="trash" src={Trash} />
-              </button>
-            </User>
-          ))}
-        </ul>
       </ContainerItens>
     </Container>
   );
