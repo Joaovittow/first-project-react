@@ -6,9 +6,10 @@ import Avatar from "../../assets/avatar.svg";
 import Arrow from "../../assets/arrow.svg";
 import Trash from "../../assets/trash.svg";
 
-import { Container, Image, Button, User } from "./styles";
+import { Container, Image, User } from "./styles";
 import H1 from "../../components/Title"
 import ContainerItens from "../../components/ContainerItens";
+import Button from "../../components/Button";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -52,7 +53,7 @@ const Users = () => {
           ))}
         </ul>
 
-        <Button onClick={goBackPage}>
+        <Button isBack={true} onClick={goBackPage}>
           <img alt="arrow" src={Arrow} /> Back
         </Button>
         

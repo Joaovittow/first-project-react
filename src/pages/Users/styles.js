@@ -32,38 +32,6 @@ export const ContainerItens = styled.div`
   min-height: calc(100vh - 170px);
 `;
 
-export const Button = styled.button`
-  margin-top: 120px;
-  background: transparent;
-  width: 342px;
-  height: 74px;
-
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 28px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  cursor: pointer;
-  border-radius: 14px;
-  border: 1px solid #fff;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
-
-  img {
-    transform: rotate(180deg);
-  }
-`;
-
 export const User = styled.li`
   display: flex;
   justify-content: space-around;
